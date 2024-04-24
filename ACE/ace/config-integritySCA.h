@@ -34,17 +34,15 @@
 
 /***** ANSI defines *****/
 #define ACE_LACKS_TEMPNAM /* believe it or not, this is ANSI C */
-#define ACE_LACKS_PUTENV_PROTOTYPE
+//--cj #define ACE_LACKS_PUTENV_PROTOTYPE
 
 #define ACE_LACKS_SENDMSG
 
 /***** End Stack Defines *****/
 
-
 /* SCA STUFF */
-#if defined(INTEGRITY_VERSION) && (INTEGRITY_VERSION >= 40108)
 #define ACE_HAS_SIG_ATOMIC_T
-#endif /* INTEGRITY_VERSION */
+/* end SCA STUFF */
 #define ACE_HAS_SIGWAIT
 #define ACE_HAS_SIGACTION
 #define ACE_HAS_SIGINFO_T
@@ -146,6 +144,15 @@
 
 /***** STUFF INTEGRITY 4.0.8 APPEARS TO SUPPORT ****/
 /* note, possibly untested with ace */
+
+/** cj config additions **/
+
+#define ACE_HAS_PTHREAD_SIGMASK_PROTOTYPE
+typedef long suseconds_t;
+typedef long useconds_t;
+
+/** cj end **/
+
 
 /***** TAO STUFF ****/
 #define TAO_USE_DOTTED_DECIMAL_ADDRESSES 1

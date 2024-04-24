@@ -22,6 +22,11 @@
 # endif /* ACE_LACKS_PRAGMA_ONCE */
 
 #include "ace/os_include/os_signal.h"
+
+//--cj
+#include <signal.h>
+//--cj end
+
 #include /**/ "ace/ACE_export.h"
 
 #if defined (ACE_EXPORT_MACRO)
@@ -42,7 +47,7 @@
  */
 
 #if !defined (ACE_LACKS_SIGSET)
-inline int ace_sigemptyset_helper (sigset_t *s)
+/*inline*/ int ace_sigemptyset_helper (sigset_t *s)
 {
 #  if defined (sigemptyset)
   return sigemptyset (s);
