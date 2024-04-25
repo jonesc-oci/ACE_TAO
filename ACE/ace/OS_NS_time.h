@@ -179,10 +179,10 @@ namespace ACE_OS
   ACE_NAMESPACE_INLINE_FUNCTION
   ACE_TCHAR *ctime_r (const time_t *clock, ACE_TCHAR *buf, int buflen);
 
-  ACE_NAMESPACE_INLINE_FUNCTION
-  double difftime (time_t t1,
-                   time_t t0);
-
+  //ACE_NAMESPACE_INLINE_FUNCTION
+  //double difftime (time_t t1,
+  //                 time_t t0);
+  
   ACE_NAMESPACE_INLINE_FUNCTION
   ACE_hrtime_t gethrtime (const ACE_HRTimer_Op = ACE_HRTIMER_GETTIME);
 

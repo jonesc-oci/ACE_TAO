@@ -1195,7 +1195,8 @@ ACE_OS::mkstemp_emulation (ACE_TCHAR * s)
 }
 #endif /* ACE_LACKS_MKSTEMP */
 
-#if !defined (ACE_HAS_GETPROGNAME) && !defined (ACE_HAS_SETPROGNAME)
+#if !defined (ACE_HAS_GETPROGNAME) && !defined (ACE_HAS_SETPROGNAME) && !defined (INTEGRITY)
+// INTEGRITY getopt.h defines __progname
 static const char *__progname = "";
 #endif /* !ACE_HAS_GETPROGNAME && !ACE_HAS_SETPROGNAME */
 
