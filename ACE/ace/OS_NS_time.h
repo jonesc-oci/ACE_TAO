@@ -125,6 +125,11 @@ inline struct tm *ace_localtime_r_helper (const time_t *clock, struct tm *res)
  * use difftime first here in this inline function, and then undefine
  * it.
  */
+
+#if defined (INTEGRITY)  && defined (difftime)
+#undef difftime
+#endif
+
 inline double ace_difftime(time_t t1, time_t t0)
 {
   return difftime (t1, t0);
@@ -179,9 +184,9 @@ namespace ACE_OS
   ACE_NAMESPACE_INLINE_FUNCTION
   ACE_TCHAR *ctime_r (const time_t *clock, ACE_TCHAR *buf, int buflen);
 
-  //ACE_NAMESPACE_INLINE_FUNCTION
-  //double difftime (time_t t1,
-  //                 time_t t0);
+  ACE_NAMESPACE_INLINE_FUNCTION
+  double difftime (time_t t1,
+                   time_t t0);
   
   ACE_NAMESPACE_INLINE_FUNCTION
   ACE_hrtime_t gethrtime (const ACE_HRTimer_Op = ACE_HRTIMER_GETTIME);

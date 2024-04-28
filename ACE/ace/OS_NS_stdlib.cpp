@@ -1213,10 +1213,17 @@ void
 ACE_OS::setprogname_emulation (const char* progname)
 {
   const char *p = ACE_OS::strrchr (progname, '/');
+#if defined (INTEGRITY)
+  if (p != 0)
+    __progname = const_cast<char *>(p) + 1;
+  else
+    __progname = const_cast<char *>(progname);
+#else
   if (p != 0)
     __progname = p + 1;
   else
     __progname = progname;
+#endif
 }
 #endif /* !ACE_HAS_SETPROGNAME */
 

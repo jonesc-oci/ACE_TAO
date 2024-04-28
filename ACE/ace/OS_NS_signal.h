@@ -47,7 +47,7 @@
  */
 
 #if !defined (ACE_LACKS_SIGSET)
-/*inline*/ int ace_sigemptyset_helper (sigset_t *s)
+inline int ace_sigemptyset_helper (sigset_t *s)
 {
 #  if defined (sigemptyset)
   return sigemptyset (s);

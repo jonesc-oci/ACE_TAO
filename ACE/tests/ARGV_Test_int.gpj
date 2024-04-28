@@ -1,0 +1,8 @@
+#!gbuild
+[INTEGRITY Application]
+#	-I$__OS_DIR\modules\ghs\ghnet2\source\kernel\integrity\ip4server
+#	:sourceDir=$__OS_DIR\modules\ghs\ghnet2\source\kernel\integrity\ip4server
+#	-UA libINTEGRITY.so
+tests/ARGV_Test.gpj		[Program]
+tests/ARGV_Test_int.int
+#ip4server_module.gpj		[Program]

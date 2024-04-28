@@ -1,0 +1,17 @@
+Kernel
+	Filename			DynamicDownload
+EndKernel
+
+AddressSpace
+	Name				ARGV_Test
+	Filename			tests/ARGV_Test
+	Language			C++
+	Library				libINTEGRITY.so
+	Library				libc.so
+	Library				libecxx_e.so
+	Task Initial
+		StackLength		0x8000
+	EndTask
+EndAddressSpace
+#--cj %include "$__OS_DIR\modules\ghs\ghnet2\source\kernel\integrity\ip4server\ip4server_module.int"
+

@@ -143,10 +143,7 @@ extern "C"
 #  define ACE_NSIG NSIG
 #endif /* ACE_VXWORKS */
 
-#if defined (INTEGRITY)
-   using ACE_SignalHandler = void (*)();
-   using ACE_SignalHandlerV = void (*)(int);
-#elif defined (ACE_HAS_CONSISTENT_SIGNAL_PROTOTYPES)
+#if defined (ACE_HAS_CONSISTENT_SIGNAL_PROTOTYPES)
   // Prototypes for both signal() and struct sigaction are consistent..
   using ACE_SignalHandler = void (*)(int);
   using ACE_SignalHandlerV = void (*)(int);
@@ -157,6 +154,9 @@ extern "C"
 #elif defined (ACE_WIN32)
    using ACE_SignalHandler = void (__cdecl *)(int);
    using ACE_SignalHandlerV = void (__cdecl *)(int);
+//#elif defined (INTEGRITY)
+//   using ACE_SignalHandler = void (*)();
+//   using ACE_SignalHandlerV = void (*)(int);
 #else /* This is necessary for some older broken version of cfront */
 #  if defined (SIG_PF)
 #    define ACE_SignalHandler SIG_PF

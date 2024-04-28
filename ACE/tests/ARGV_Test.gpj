@@ -1,0 +1,43 @@
+#!gbuild
+#primaryTarget=ppc_integrity.tgt
+[Program]
+	-dynamic
+	-o tests/ARGV_Test
+	-Ospeed
+	-OI
+	--c++14
+	--exceptions
+	-I
+	-Itests/..
+	-Ltests/.
+	-L${ACE_ROOT}\lib
+	#-lTest_Output
+	-lACE
+	#-liphlpapi
+	-lsocket
+	-lshm_client
+	-lnet
+	-livfs
+	-lposix_sys_client
+	#-lposix_sys_server
+acetest.mpb
+tests.mpc
+tests.mwc
+run_test.pl
+Bug_3334_Regression_Test.conf
+Bug_3912_Regression_Test.conf
+Service_Config_Stream_Test.conf
+Service_Config_Test.UTF-16.conf
+Service_Config_Test.UTF-16.conf.xml		[Text]
+Service_Config_Test.WCHAR_T.conf
+Service_Config_Test.WCHAR_T.conf.xml		[Text]
+Service_Config_Test.conf
+Service_Config_Test.conf.xml		[Text]
+UNIXclerk.conf
+UNIXserver.conf
+UNIXtokens.conf
+Win32clerk.conf
+Win32server.conf
+Win32tokens.conf
+ARGV_Test.cpp
+Main.cpp

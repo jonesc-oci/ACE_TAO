@@ -34,15 +34,17 @@
 
 /***** ANSI defines *****/
 #define ACE_LACKS_TEMPNAM /* believe it or not, this is ANSI C */
-//--cj #define ACE_LACKS_PUTENV_PROTOTYPE
+//#define ACE_LACKS_PUTENV_PROTOTYPE
 
 #define ACE_LACKS_SENDMSG
 
 /***** End Stack Defines *****/
 
+
 /* SCA STUFF */
+#if defined(INTEGRITY_VERSION) && (INTEGRITY_VERSION >= 40108)
 #define ACE_HAS_SIG_ATOMIC_T
-/* end SCA STUFF */
+#endif /* INTEGRITY_VERSION */
 #define ACE_HAS_SIGWAIT
 #define ACE_HAS_SIGACTION
 #define ACE_HAS_SIGINFO_T
@@ -67,7 +69,19 @@
 /****** SYSV_IPC STUFF *****/
 #define ACE_LACKS_KEY_T
 
+#define ACE_HAS_WCHAR
+#define ACE_LACKS_ISCTYPE
+#define ACE_LACKS_WCSICMP
+#define ACE_LACKS_WCSNICMP
+#define ACE_LACKS_WCSDUP
+#define ACE_LACKS_WCSTOK
+#define ACE_LACKS_ALPHASORT
+#define ACE_LACKS_ITOW
+#define ACE_LACKS_STRPTIME
+
 /****** Posix Defines *****/
+#define ACE_LACKS_SUSECONDS_T
+#define ACE_LACKS_USECONDS_T
 #define ACE_LACKS_WAIT
 #define ACE_LACKS_WAITPID
 #define ACE_HAS_POSIX_TIME
@@ -101,14 +115,14 @@
 #define ACE_LACKS_UNAME
 #define ACE_LACKS_UMASK
 #define ACE_LACKS_ISATTY
-//--cj #define ACE_LACKS_GETOPT
+#define ACE_LACKS_GETOPT
 #define ACE_LACKS_STRCASECMP
 #define ACE_LACKS_TRUNCATE
 #define ACE_LACKS_PWD_FUNCTIONS
 #define ACE_LACKS_UNIX_SIGNALS
 #define ACE_HAS_THREAD_SPECIFIC_STORAGE
 #define ACE_LACKS_SYSV_SHMEM
-//--cj #define ACE_LACKS_PUTENV
+#define ACE_LACKS_PUTENV
 #define ACE_HAS_4_4BSD_SENDMSG_RECVMSG
 #define ACE_HAS_CLOCK_GETTIME
 #define ACE_HAS_CLOCK_SETTIME
@@ -144,27 +158,6 @@
 
 /***** STUFF INTEGRITY 4.0.8 APPEARS TO SUPPORT ****/
 /* note, possibly untested with ace */
-
-/** cj config additions **/
-
-#define ACE_HAS_WCHAR
-#define ACE_HAS_PTHREAD_SIGMASK_PROTOTYPE
-
-#define ACE_LACKS_GETPROGNAME
-#define ACE_LACKS_SETPROGNAME
-#define ACE_LACKS_SUSECONDS_T
-#define ACE_LACKS_USECONDS_T
-#define ACE_LACKS_ISCTYPE
-#define ACE_LACKS_ALPHASORT
-#define ACE_LACKS_ITOW
-#define ACE_LACKS_STRPTIME
-#define ACE_LACKS_WCSDUP
-#define ACE_LACKS_WCSICMP
-#define ACE_LACKS_WCSNICMP
-#define ACE_LACKS_WCSTOK
-
-/** cj end **/
-
 
 /***** TAO STUFF ****/
 #define TAO_USE_DOTTED_DECIMAL_ADDRESSES 1
