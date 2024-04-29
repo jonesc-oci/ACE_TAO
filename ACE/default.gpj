@@ -38,7 +38,7 @@ customization=${__OS_DIR}\target\integrity.bod
 ace/ACE.gpj		[Library]
 	#-pic
 	-object_dir=ace/.obj
-	-liphlpapi
+#	-liphlpapi
 #	-DACE_BUILD_DLL
 #	-DACE_NO_INLINE
 	-DACE_HAS_CPP14

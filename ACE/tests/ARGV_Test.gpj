@@ -18,8 +18,7 @@
 	-lshm_client
 	-lnet
 	-livfs
-	-lposix_sys_client
-	#-lposix_sys_server
+	-lposix
 acetest.mpb
 tests.mpc
 tests.mwc

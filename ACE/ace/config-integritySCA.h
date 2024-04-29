@@ -162,6 +162,10 @@
 /***** TAO STUFF ****/
 #define TAO_USE_DOTTED_DECIMAL_ADDRESSES 1
 
+//--cj (avoids a multiply defined error. TODO: remove. this should not be needed)
+#define ACE_LACKS_SYSTEM
+//--cj end
+
 #include <INTEGRITY.h>
 
 #include <time.h>
